@@ -6,6 +6,7 @@
 </head>
 <body>
     <header>
+    <?php include("cookie.html"); ?>
         <?php
             session_start();
             require("authentification.php");

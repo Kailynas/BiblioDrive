@@ -1,5 +1,6 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <?php require_once('connexion.php') ?>
-
+<?php include("cookie.html"); ?>
 <div class="container mt-3">
     <div class="mobile-nav">
         <div>
@@ -71,25 +72,39 @@
             <?php
                 } else {
             ?>
-                    <div class="login-form">
-                        <p class="titre-form">Connexion :</p>
-                        <form method="post" class="form-login">
+                    <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4">Connexion</h5>
+                    <form method="post" class="needs-validation" novalidate>
+                        <div class="mb-3">
                             <?php
-                                if (isset($email_renseigne)) 
-                                    echo '<input class="form-control" type="email" name="email" id="email" placeholder="Email" autocomplete="off" value="'.$email_renseigne.'" required>';
-                                else 
-                                    echo '<input class="form-control" type="email" name="email" id="email" placeholder="Email" autocomplete="off" required>';
-                                    
-                                echo '<input class="form-control" type="password" name="mdp" id="mdp" placeholder="Mot de passe" autocomplete="off" required>';
-                                    
-                                if (isset($erreur_connexion)) 
-                                    echo '<p class="erreur-connexion">Votre email ou mot de passe est incorrect.</p>';
-                                    
-                                echo '<input class="btn btn-primary submit-login button-general" type="submit" value="Se connecter">';
+                                $emailInput = isset($email_renseigne) ? $email_renseigne : '';
+                                echo '<input class="form-control" type="email" name="email" id="email" placeholder="Email" autocomplete="off" value="'.$emailInput.'" required>';
                             ?>
-                        </form>
-                    </div>
-            <?php } ?>
+                            <div class="invalid-feedback">
+                                Veuillez entrer une adresse e-mail valide.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" type="password" name="mdp" id="mdp" placeholder="Mot de passe" autocomplete="off" required>
+                            <div class="invalid-feedback">
+                                Veuillez entrer votre mot de passe.
+                            </div>
+                        </div>
+                        <?php
+                            if (isset($erreur_connexion)) {
+                                echo '<p class="text-danger text-center mb-3">Votre email ou mot de passe est incorrect.</p>';
+                            }
+                        ?>
+                        <button class="btn btn-primary btn-block" type="submit">Se connecter</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+    <?php } ?>
 </div>
+

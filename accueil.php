@@ -6,46 +6,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <title>Bibliodrive</title>
-    <script src="tarteaucitron/tarteaucitron.js"></script>    
-    <script>
-    tarteaucitron.init({
-
-        "privacyUrl": "", /* URL de la page de la politique de vie privée */
-
-        "hashtag": "#tarteaucitron", /* Ouvrir le panneau contenant ce hashtag */
-
-        "cookieName": "tarteaucitron", /* Nom du Cookie */
-
-        "orientation": "middle", /* Position de la bannière (top - bottom) */
-
-        "showAlertSmall": true, /* Voir la bannière réduite en bas à droite */
-
-        "cookieslist": true, /* Voir la liste des cookies */
-
-        "adblocker": false, /* Voir une alerte si un bloqueur de publicités est détecté */
-
-        "AcceptAllCta": true, /* Voir le bouton accepter tout (quand highPrivacy est à true) */
-
-        "highPrivacy": true, /* Désactiver le consentement automatique : OBLIGATOIRE DANS l'UE */
-
-        "handleBrowserDNTRequest": false, /* Si la protection du suivi du navigateur est activée, tout interdire */
-
-        "removeCredit": false, /* Retirer le lien vers tarteaucitron.js */
-
-        "moreInfoLink": true, /* Afficher le lien "voir plus d'infos" */
-
-        "useExternalCss": false, /* Si false, tarteaucitron.css sera chargé */
-
-        //"cookieDomain": ".my-multisite-domaine.fr", /* Cookie multisite - cas où SOUS DOMAINE */
-
-        "readmoreLink": "/cookiespolicy" /* Lien vers la page "Lire plus" A FAIRE OU PAS  */
-
-    });
-
-    </script>
 </head>
 <body>
-
+<?php include("cookie.html"); ?>
     <header>
         <?php
             session_start();

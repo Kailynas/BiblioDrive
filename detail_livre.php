@@ -5,7 +5,7 @@
     <title>Detail - Bibliodrive</title>
 </head>
 <body>
-
+<?php include("cookie.html"); ?>
     <?php
         session_start();
 

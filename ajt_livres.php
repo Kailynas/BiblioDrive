@@ -9,7 +9,7 @@
     <title>Ajouter un livre - Bibliodrive</title>
 </head>
 <body>
-
+<?php include("cookie.html"); ?>
 <?php
 session_start();
 
